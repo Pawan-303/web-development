@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+ 
+
+        h1{
+            display: flex;
+            flex-flow: column wrap;
+            justify-items: center;
+            align-content: center;
+            overflow-wrap: anywhere;
+        }
+        .container{
+            width: 50vw;
+            max-width: 300px;
+            height: auto;
+            background-color: rgb(221, 158, 221);
+            border: 2px solid white;
+            margin: auto;
+            padding-bottom: 40px;
+            text-align: center;
+        }
+
+        .first,.second,.result{
+            border: 2px solid black;
+            margin: 5px;
+            padding: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+
+        #fnumber,#snumber{
+            width: 50px;
+            border-radius: 10px;
+            border: 2px solid rgb(129, 136, 110);
+            padding: 3px;    
+        }
+
+        .result{
+            width: 90%;
+            max-width: 150px;
+            height: 30px;
+            border: 2px solid black;
+            margin: auto;
+            display: flex;
+            flex-wrap: row,wrap;
+            text-align: center;
+            text-overflow: ellipsis;
+            background-color: white;
+        }
+
+        .operations{
+            border: 2px solid black;
+            margin: 10px;
+            padding: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        #operations,#submit{
+            border: 2px solid black;
+            margin: 5px;
+            padding: 2px;
+        }
+        button{
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+            font-size: large;
+        
+        }
+        .container *{
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <h1>Calculator</h1>
+        <div class="first">
+            <p>Enter first value : </p>
+        <input type="number" id="fnumber">
+        </div>
+        <div class="second">
+            <p>Enter second value : </p>
+        <input type="number" id="snumber">
+        </div>
+        <div class="result">
+            <span id="result">00.00</span>
+        </div>
+        <div class="operations">
+            <div id="operations">
+                <button onclick="add()">+</button>
+                <button onclick="sub()">-</button>
+                <button onclick="mult()">*</button>
+                <button onclick="div()">/</button>
+                <button onclick="rem()">%</button>
+            </div>
+ 
+        </div>
+
+    </div>
+    <script src="calc.js"></script>
+</body>
+</html>
