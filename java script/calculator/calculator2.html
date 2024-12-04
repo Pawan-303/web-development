@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator2</title>
+    <style>
+        .container {
+            width: 300px;
+            height: auto;
+            background-color: rgba(26, 12, 12, 0.377);
+            border: 2px solid black;
+            text-align: center;
+            padding: 10px;
+            margin: auto;
+        }
+
+        #result {
+            max-width: 150px;
+            min-height: 30px;
+            background-color: white;
+            margin: 10px auto;
+            border: 1px solid black;
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+    <script>
+        function calc() {
+            var fvalue = parseFloat(document.getElementById('fnumber').value);
+            var svalue = parseFloat(document.getElementById('snumber').value);
+            var oprt = document.getElementById('opr').value;
+            var result = 0;
+            if (oprt == '+') {
+                result = fvalue + svalue;
+            }
+            else if (oprt == '-') {
+                result = fvalue - svalue;
+            }
+            else if (oprt == '*') {
+                result = fvalue * svalue;
+            }
+            else if (oprt == '/') {
+                if (svalue == 0) {
+                    result = "Can not divide by zero";
+                }
+                else {
+                    result = fvalue / svalue;
+                }
+            }
+            else if (oprt == '%') {
+                result = fvalue % svalue;
+            }
+            else if (oprt = "default") {
+                result = "Please select operation";
+
+            }
+            else {
+                result = "Please enter the correct numbers";
+            }
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculator</h1>
+        <h3>Enter first number: </h3>
+        <input type="number" id="fnumber">
+        <h3>Enter second number :</h3>
+        <input type="number" id="snumber">
+        <h3>Select Operation</h3>
+        <select name="operation" id="opr">
+            <option selected value="default">Select</option>
+            <option value="+">Addition</option>
+            <option value="-">Subtraction</option>
+            <option value="*">Multiplication</option>
+            <option value="/">Divide</option>
+            <option value="%">Mod</option>
+            <option value="sqr">(a+b)<sup>2</sup></option>
+        </select>
+        <button onclick="calc()">Submit</button>
+        
+        <div id="result"></div>
+    </div>
+
+</body>
+
+</html>
